@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [TestSuite]" parallel="tests">
+  <parameter name="browser" value="IE"/>
+  <test name="ChromeTest">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="GmailCrossBrowser.GmailLogin"/>
+    </classes>
+  </test> <!-- ChromeTest -->
+  <test name="FirefoxTest">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="GmailCrossBrowser.GmailLogin"/>
+    </classes>
+  </test> <!-- FirefoxTest -->
+  <test name="IETest">
+    <parameter name="browser" value="IE"/>
+    <classes>
+      <class name="GmailCrossBrowser.GmailLogin"/>
+    </classes>
+  </test> <!-- IETest -->
+  <test name="IETest(failed)" parallel="tests">
+    <parameter name="browser" value="IE"/>
+    <classes>
+      <class name="GmailCrossBrowser.GmailLogin">
+        <methods>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="testParameterWithXML"/>
+        </methods>
+      </class> <!-- GmailCrossBrowser.GmailLogin -->
+    </classes>
+  </test> <!-- IETest(failed) -->
+  <test name="FirefoxTest(failed)" parallel="tests">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="GmailCrossBrowser.GmailLogin">
+        <methods>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="testParameterWithXML"/>
+        </methods>
+      </class> <!-- GmailCrossBrowser.GmailLogin -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->
